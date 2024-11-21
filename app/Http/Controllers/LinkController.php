@@ -93,7 +93,7 @@ class LinkController extends Controller
     public function sendContactMail(Request $request) {
 
         $request->validate([
-            'full_name' => 'required|string',
+            'fullname' => 'required|string',
             'email' => 'required|email',
             'message' => 'required|string',
         ]);

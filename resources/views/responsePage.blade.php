@@ -83,7 +83,7 @@
 
         <div>
             <div x-show="notificationOpen" class="bg-dark dark:text-dark dark:bg-white flex items-start gap-3 text-white py-3 px-4 rounded-md max-w-[250px] fixed bottom-5 right-5 z-[99999]" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
-                <span>Hello, world! This is a toast message.</span>
+                <span>Mensaje Enviado Correctamente!</span>
                 <button type="button" x-on:click="notificationOpen = false" class="">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5">
                         <path d="M12.0007 10.5865L16.9504 5.63672L18.3646 7.05093L13.4149 12.0007L18.3646 16.9504L16.9504 18.3646L12.0007 13.4149L7.05093 18.3646L5.63672 16.9504L10.5865 12.0007L5.63672 7.05093L7.05093 5.63672L12.0007 10.5865Z" fill="currentColor"></path>
