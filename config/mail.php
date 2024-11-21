@@ -49,6 +49,21 @@ return [
             'local_domain' => env('MAIL_EHLO_DOMAIN', parse_url(env('APP_URL', 'http://localhost'), PHP_URL_HOST)),
         ],
 
+        'contact' => [
+            'transport' => 'smtp',
+            'host' => env('CONTACT_MAIL_HOST', 'smtp.mailgun.org'),
+            'port' => env('CONTACT_MAIL_PORT', 587),
+            'encryption' => env('CONTACT_MAIL_ENCRYPTION', 'tls'),
+            'username' => env('CONTACT_MAIL_USERNAME'),
+            'password' => env('CONTACT_MAIL_PASSWORD'),
+            'timeout' => null,
+            'auth_mode' => null,
+            'from' => [
+                'address' => env('CONTACT_MAIL_FROM_ADDRESS', 'info@example.com'),
+                'name' => env('MAIL_FROM_NAME', 'Example'),
+            ],
+        ],
+
         'ses' => [
             'transport' => 'ses',
         ],
