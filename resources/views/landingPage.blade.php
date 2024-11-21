@@ -10,8 +10,8 @@
     <div class="h-auto relative overflow-y-auto overflow-x-hidden p-5 sm:p-7 space-y-5">
         <div class="flex flex-col gap-5 min-h-[calc(100vh-188px)] sm:min-h-[calc(100vh-204px)]">
 
-            <div class="grid gap-5 justify-items-center ">
-                <div class="w-8/12 rounded p-5 m-4 bg-gray/[8%]">
+            <div class="grid grid-cols-1 gap-5">
+                <div class="rounded p-5 m-4 bg-gray/[8%]">
                     <div class="text-start">
                         <h2 class="font-bold text-3xl">JustAnotherLinkCut</h2>
                         <p class="text-gray mt-5">{{ __('messages.description') }}</p>
@@ -20,8 +20,8 @@
             </div>
 
 
-            <div class="grid gap-5 justify-items-center">
-                <div class="bg-white dark:bg-dark dark:border-gray/20 border-2 border-lightgray/10 p-5 rounded-lg w-8/12">
+            <div class="grid grid-cols-1 gap-5">
+                <div class="bg-white dark:bg-dark dark:border-gray/20 border-2 border-lightgray/10 p-5 rounded-lg">
                     <form class="space-y-4" action="{{ route('cut', ['locale' => app()->getLocale()]) }}" method="POST">
                         @csrf
                         <input type="url" id="url" name="original_url" class="form-input" placeholder="https://..." required="">
@@ -50,8 +50,8 @@
                 </div>
             </div>
 
-            <div class="grid gap-5 justify-items-center">
-                <div class="bg-white dark:bg-dark dark:border-gray/20 border-2 border-lightgray/10 p-5 rounded-lg w-8/12">
+            <div class="grid grid-cols-1 gap-5">
+                <div class="bg-white dark:bg-dark dark:border-gray/20 border-2 border-lightgray/10 p-5 rounded-lg">
                     @include('description')
                 </div>
             </div>

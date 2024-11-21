@@ -1,4 +1,4 @@
-<div class="sm:block hidden flex-auto">
+<div>
     <ul class="flex items-center gap-[30px]">
         <li>
             <a href="{{ route('home', ['locale' => app()->getLocale()] ) }}" class="flex items-center gap-2.5 text-lightgray hover:text-primary duration-300 text-sm font-semibold">

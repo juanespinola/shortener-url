@@ -1,12 +1,13 @@
 <nav class="sidebar fixed z-50 flex-none w-[226px] border-r-2 border-lightgray/[8%] dark:border-gray/20 transition-all duration-300">
     <div class="bg-white dark:bg-dark h-full">
-        <div class="p-3.5">
+{{--        <div class="p-3.5">--}}
 {{--            <a href="" class="main-logo w-full">--}}
 {{--                <img src="{{ asset('assets/images/logo-dark.svg') }}" class="mx-auto dark-logo h-8 logo dark:hidden" alt="logo" />--}}
 {{--                <img src="{{ asset('assets/images/logo-light.svg') }}" class="mx-auto light-logo h-8 logo hidden dark:block" alt="logo" />--}}
 {{--                <img src="{{ asset('assets/images/logo-icon.svg') }}" class="logo-icon h-8 mx-auto hidden" alt="">--}}
 {{--            </a>--}}
-        </div>
+{{--        </div>--}}
+{{--        <div></div>--}}
         <div class="flex items-center gap-2.5 py-2.5 pe-2.5">
             <div class="h-[2px] bg-lightgray/10 dark:bg-gray/50 block flex-1"></div>
             <button type="button" class="shrink-0 btn-toggle hover:text-primary duration-300" @click="$store.app.toggleSidebar()">
