@@ -1,4 +1,4 @@
-<div class="text-lightgray hover:text-primary duration-300 md:block hidden">
+<div class="text-lightgray hover:text-primary duration-300">
     <a href="javascript:;" x-show="$store.app.mode === 'light'" @click="$store.app.toggleMode('dark')"
        style="display: none;">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
