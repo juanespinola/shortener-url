@@ -25,8 +25,8 @@ class ClickLinkTracking
     {
 
         $agent = new Agent();
-//        $ip = request()->ip();
-        $ip = "93.35.145.156";
+        $ip = request()->ip();
+//        $ip = "93.35.145.156";
 
         LinkTracking::create([
             "link_id" => $link->id,
