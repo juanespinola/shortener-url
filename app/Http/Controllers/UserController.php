@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Link;
 use App\Models\LinkTracking;
 use Illuminate\Http\Request;
-use App\Models\User;
-use function PHPUnit\Framework\isEmpty;
 
 class UserController extends Controller
 {
@@ -37,6 +35,7 @@ class UserController extends Controller
                 ]);
 
                 $short_code = basename($request->input('search_code'));
+                $selectDays = $request->input('selectDays') ? $request->input('selectDays') : 7;
 
                 $link = Link::where('short_code', $short_code)->first();
 
@@ -44,20 +43,20 @@ class UserController extends Controller
                     return response()->json(['message' => 'This link has expired.'], 400);
                 }
 
-                $clicksPorDia = LinkTracking::clicksForDay($link->id, $request->input('selectDays'));
-                $totalClicksPorDia = LinkTracking::totalClicksForDay($link->id, $request->input('selectDays'));
+                $clicksPorDia = LinkTracking::clicksForDay($link->id, $selectDays);
+                $totalClicksPorDia = LinkTracking::totalClicksForDay($link->id, $selectDays);
                 $objClicksPorDia = [
                     'labels' => $clicksPorDia->pluck('date')->toArray(),
                     'data' => $clicksPorDia->pluck('total_clicks')->toArray()
                 ];
 
-                $clicksPorDispositivo = LinkTracking::clicksForDevices($link->id, $request->input('selectDays'));
+                $clicksPorDispositivo = LinkTracking::clicksForDevices($link->id, $selectDays);
                 $objClicksPorDispositivo = [
                     'labels' => $clicksPorDispositivo->pluck('type_device')->toArray(),
                     'data' => $clicksPorDispositivo->pluck('total_clicks')->toArray()
                 ];
 
-                $clicksPorPais = LinkTracking::clicksForCountry($link->id, $request->input('selectDays'));
+                $clicksPorPais = LinkTracking::clicksForCountry($link->id, $selectDays);
                 $objClicksPorPais = [
                     'labels' => $clicksPorPais->pluck('country')->toArray(),
                     'data' => $clicksPorPais->pluck('total_clicks')->toArray()
@@ -82,21 +81,22 @@ class UserController extends Controller
         // obtiene todos tracking de links de un usuario
         try {
             if(auth()->check()){
+                $selectDays = $request->input('selectDays') ? $request->input('selectDays') : 7;
 
-                $clicksPorDia = LinkTracking::clicksForDay(null, $request->input('selectDays'));
-                $totalClicksPorDia = LinkTracking::totalClicksForDay(null, $request->input('selectDays'));
+                $clicksPorDia = LinkTracking::clicksForDay(null, $selectDays);
+                $totalClicksPorDia = LinkTracking::totalClicksForDay(null, $selectDays);
                 $objClicksPorDia = [
                     'labels' => $clicksPorDia->pluck('date')->toArray(),
                     'data' => $clicksPorDia->pluck('total_clicks')->toArray()
                 ];
 
-                $clicksPorDispositivo = LinkTracking::clicksForDevices(null, $request->input('selectDays'));
+                $clicksPorDispositivo = LinkTracking::clicksForDevices(null, $selectDays);
                 $objClicksPorDispositivo = [
                     'labels' => $clicksPorDispositivo->pluck('type_device')->toArray(),
                     'data' => $clicksPorDispositivo->pluck('total_clicks')->toArray()
                 ];
 
-                $clicksPorPais = LinkTracking::clicksForCountry(null, $request->input('selectDays'));
+                $clicksPorPais = LinkTracking::clicksForCountry(null, $selectDays);
                 $objClicksPorPais = [
                     'labels' => $clicksPorPais->pluck('country')->toArray(),
                     'data' => $clicksPorPais->pluck('total_clicks')->toArray()

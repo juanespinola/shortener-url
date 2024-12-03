@@ -50,12 +50,13 @@
 
     <!-- Style Css -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/prism.css') }}">
 
     <!-- Scripts -->
     {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
     <link async rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     @if(Route::is('home'))
-    @include('layouts.partials.auth.ads')
+{{--    @include('layouts.partials.auth.ads')--}}
     @endif
 </head>

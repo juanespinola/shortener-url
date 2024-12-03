@@ -1,4 +1,5 @@
 <div class="h-[60px] bg-white dark:bg-dark dark:border-gray/20 border-b-2 border-lightgray/10 flex items-center justify-between gap-2.5 px-7">
+
     <div class="flex-auto flex items-center gap-2.5">
         <div class="lg:hidden">
             <button type="button" class="hover:text-primary" @click="$store.app.toggleSidebar()">
@@ -9,16 +10,17 @@
             </button>
         </div>
         <div></div>
+        <x-extra-button/>
     </div>
-    <div class="sm:block hidden flex-auto">
-        <ul class="flex items-start gap-[30px]">
-            <li>
-                <a href="{{ route('home', ['locale' => app()->getLocale()] ) }}" class="flex items-center gap-2.5 text-lightgray hover:text-primary duration-300 text-sm font-semibold">
-                    <span class="lg:block hidden">{{ __('messages.home') }} </span>
-                </a>
-            </li>
-        </ul>
-    </div>
+{{--    <div class="flex-auto">--}}
+{{--        <ul class="flex items-start gap-[30px]">--}}
+{{--            <li>--}}
+{{--                <a href="{{ route('home', ['locale' => app()->getLocale()] ) }}" class="flex items-center gap-2.5 text-lightgray hover:text-primary duration-300 text-sm font-semibold">--}}
+{{--                    <span class="lg:block hidden">{{ __('messages.home') }} </span>--}}
+{{--                </a>--}}
+{{--            </li>--}}
+{{--        </ul>--}}
+{{--    </div>--}}
     <div class="flex items-center gap-5">
         <div x-data="{ fullScreen: false }">
             <button class="text-lightgray hover:text-primary block" x-bind:class="{ 'hidden': fullScreen, 'block': !fullScreen }" x-on:click="fullScreen = !fullScreen" @click="$store.app.toggleFullScreen()">

@@ -9,3 +9,6 @@
     <!-- Custom js -->
     <script src="{{ asset('assets/js/custom.js') }}"></script>
     <script src="{{ asset('assets/js/responsePage.js') }}"></script>
+    <script src="{{ asset('assets/js/prism.js') }}"></script>
+
+

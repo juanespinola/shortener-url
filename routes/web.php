@@ -80,4 +80,13 @@ Route::post('{locale}/sendmail', [LinkController::class, 'sendQrCodeInMail'])
     ->name('sendQrCodeInMail')
     ->where('locale', 'es|en|fr|it');
 
+Route::get('/{locale?}/api', function (string $locale = "es") {
+    if (!in_array($locale, ['es', 'en', 'fr', 'it'])) {
+        abort(400);
+    }
+    App::setLocale($locale);
+    return view('api');
+})
+    ->name('api');
+
 

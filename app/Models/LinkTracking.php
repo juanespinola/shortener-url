@@ -28,13 +28,13 @@ class LinkTracking extends Model
         return $this->belongsTo(Link::class);
     }
 
-    public static function clicksForDay($link_id = null, $days){
+    public static function clicksForDay($link_id = null, $days){ // si no existe datos, by defaul pone 7 dias
         try {
             $query = self::select(
                 DB::raw('DATE(clicked_at) as date'),
                 DB::raw('count(*) as total_clicks')
             )
-            ->where('clicked_at', '>=', Carbon::now()->subDays($days)) // Últimos 30 días
+            ->where('clicked_at', '>=', Carbon::now()->subDays($days)) // Últimos 7 días
             ->whereHas('link', function ($q) {
                 if(auth()->check()) {
                     $q->where('user_id', auth()->user()->id); // Asegura que solo tome links del usuario
@@ -53,9 +53,9 @@ class LinkTracking extends Model
         }
     }
 
-    public static function totalClicksForDay($link_id = null, $days){
+    public static function totalClicksForDay($link_id = null, $days){ // si no existe datos, by defaul pone 7 dias
         try {
-            $query = self::where('clicked_at', '>=', Carbon::now()->subDays($days)) // Últimos 30 días
+            $query = self::where('clicked_at', '>=', Carbon::now()->subDays($days)) // Últimos 7 días
                 ->whereHas('link', function ($q) {
                     if(auth()->check()) {
                         $q->where('user_id', auth()->user()->id); // Asegura que solo tome links del usuario
@@ -74,7 +74,7 @@ class LinkTracking extends Model
 
     }
 
-    public static function clicksForDevices($link_id = null, $days){
+    public static function clicksForDevices($link_id = null, $days){ // si no existe datos, by defaul pone 30 dias
         $query = self::select(
             "type_device",
             DB::raw('count(*) as total_clicks')
@@ -94,7 +94,7 @@ class LinkTracking extends Model
         return $query->get();
     }
 
-    public static function clicksForCountry($link_id = null, $days){
+    public static function clicksForCountry($link_id = null, $days){ // si no existe datos, by defaul pone 30 dias
         $query = self::select(
             "country",
             DB::raw('count(*) as total_clicks')

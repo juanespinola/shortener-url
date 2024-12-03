@@ -18,42 +18,52 @@ class LinkController extends Controller
         if (! in_array($locale, ['es','en', 'fr', 'it'])) {
             abort(400);
         }
-
         // Establecer el idioma
         App::setLocale($locale);
 
-        $request->validate([
-            'original_url' => 'required|url',
-            'no_expire' => 'nullable',
-        ]);
+        try {
+            $request->validate([
+                'original_url' => 'required|url',
+                'no_expire' => 'nullable',
+            ]);
 
-        $qr_code = $request->qr_code;
-        $no_expire = $request->no_expire;
-        $send_email = $request->send_email;
 
-        $qr_code_image = null;
+            $qr_code = $request->qr_code;
+            $no_expire = $request->no_expire;
+            $send_email = $request->send_email;
 
-        $shortCode = substr(str_shuffle('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'), 0, 6);
+            $qr_code_image = null;
+            $shortCode = substr(str_shuffle('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'), 0, 6);
 
-        Link::create([
-            'original_url' => $request->original_url,
-            'short_code' => $shortCode,
-            'expires_at' => isset($no_expire) ? null : now()->addHours(48),
-            'user_id' => auth()->check() ? auth()->user()->id : null,
-        ]);
+            Link::create([
+                'original_url' => $request->original_url,
+                'short_code' => $shortCode,
+                'expires_at' => isset($no_expire) ? null : now()->addHours(48),
+                'user_id' => auth()->check() ? auth()->user()->id : null,
+            ]);
 
-        if($qr_code){
-            $qr_code_image = QrCode::generateQrCode($request->original_url);
+            if($qr_code){
+                $qr_code_image = QrCode::generateQrCode($request->original_url);
+            }
+
+            if($request->wantsJson() || $request->is("api/*")) {
+                return response()->json(["Messages" => "Create Correct URL", "shortCode" => url('')."/$shortCode" ] );
+            }
+
+            return view('responsePage',
+                compact('shortCode', 'qr_code', 'no_expire', 'send_email', 'qr_code_image')
+            );
+
+
+        } catch (\Throwable $th) {
+            throw $th;
         }
 
-        return view('responsePage',
-            compact('shortCode', 'qr_code', 'no_expire', 'send_email', 'qr_code_image')
-        );
     }
 
     public function redirect($code)
     {
-        if(in_array($code, ['login', 'register', 'dashboard', 'getUserLinks', 'contact'])){
+        if(in_array($code, ['login', 'register', 'dashboard', 'getUserLinks', 'contact', 'api', 'docs'])){
             return to_route($code);
         }
 
@@ -84,7 +94,6 @@ class LinkController extends Controller
             QrCode::sendQrCodeInMail($email, $code);
             return response()->json(["data" => true], 200);
         } catch (\Throwable $th) {
-            throw $th;
             return response()->json(["data" => false], 400);
         }
     }
@@ -115,9 +124,11 @@ class LinkController extends Controller
         try {
             $request->validate([
                 'search_code' => 'required|url',
+                'selectDays' => 'nullable',
             ]);
 
             $short_code = basename($request->input('search_code'));
+            $selectDays = $request->input('selectDays') ? $request->input('selectDays') : 7;
 
             $link = Link::where('short_code', $short_code)->first();
 
@@ -126,20 +137,20 @@ class LinkController extends Controller
             }
 
 
-            $clicksPorDia = LinkTracking::clicksForDay($link->id, $request->input('selectDays'));
-            $totalClicksPorDia = LinkTracking::totalClicksForDay($link->id, $request->input('selectDays'));
+            $clicksPorDia = LinkTracking::clicksForDay($link->id, $selectDays);
+            $totalClicksPorDia = LinkTracking::totalClicksForDay($link->id, $selectDays);
             $objClicksPorDia = [
                 'labels' => $clicksPorDia->pluck('date')->toArray(),
                 'data' => $clicksPorDia->pluck('total_clicks')->toArray()
             ];
 
-            $clicksPorDispositivo = LinkTracking::clicksForDevices($link->id, $request->input('selectDays'));
+            $clicksPorDispositivo = LinkTracking::clicksForDevices($link->id, $selectDays);
             $objClicksPorDispositivo = [
                 'labels' => $clicksPorDispositivo->pluck('type_device')->toArray(),
                 'data' => $clicksPorDispositivo->pluck('total_clicks')->toArray()
             ];
 
-            $clicksPorPais = LinkTracking::clicksForCountry($link->id, $request->input('selectDays'));
+            $clicksPorPais = LinkTracking::clicksForCountry($link->id, $selectDays);
             $objClicksPorPais = [
                 'labels' => $clicksPorPais->pluck('country')->toArray(),
                 'data' => $clicksPorPais->pluck('total_clicks')->toArray()
