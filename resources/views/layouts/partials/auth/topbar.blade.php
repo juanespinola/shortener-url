@@ -45,11 +45,10 @@
                 </svg>
             </button>
         </div>
-        <x-toggle-theme/>
+{{--        <x-toggle-theme/>--}}
         <x-dropdown-lenguage/>
         <div class="profile z-10" x-data="dropdown" @click.outside="open = false">
             <button type="button" class="flex items-center gap-2.5" @click="toggle()">
-{{--                <img class="h-[38px] w-[38px] rounded-full" src="{{ asset('assets/images/user.png') }}" alt="Header Avatar">--}}
                 <div class="text-start">
                     <div class="flex items-center gap-1">
                         <span class="hidden xl:block text-sm font-semibold">{{ auth()->user()->name }}</span>

@@ -3,7 +3,7 @@
 
 return [
     'title_description' => 'Acorta y comparte tus enlaces fácilmente',
-    'meta_description' => 'Acorta, gestiona y comparte tus enlaces con facilidad utilizando nuestro URL Shortener. Obtén códigos QR y mucho más.',
+    'meta_description' => 'Acorta, gestiona y comparte tus enlaces con facilidad utilizando nuestro página. Obtén códigos QR y mucho más.',
     'description' => 'Acorta tus enlaces con URL Shortener',
     'label_url' => 'Tu Url',
     'button_submit' => '¡Acorta tu enlace ahora y empieza a compartirlo!',
@@ -32,4 +32,15 @@ return [
     'btn_redirect' => 'Continuar',
     'faq' => 'FAQ',
     'home' => 'Inicio',
+
+    'header' => [
+        'buttons' => [
+            'api' => 'API',
+            'resources' => 'Recursos',
+            'information' => 'Información',
+            'how_use' => 'Como utilizar',
+            'tracklink' => 'Track Link',
+            'contact' => 'Contacto',
+        ]
+    ]
 ];

@@ -3,7 +3,7 @@
 
 return [
     'title_description' => 'Shorten and share your links easily',
-    'meta_description' => 'Shorten, manage, and share your links with ease using our URL Shortener. Get QR codes and much more.',
+    'meta_description' => 'Shorten, manage, and share your links with ease using our page. Get QR codes and much more.',
     'description' => 'Shorten your links with URL Shortener',
     'label_url' => 'Your URL',
     'button_submit' => 'Shorten your link now and start sharing!',
@@ -32,4 +32,15 @@ return [
     'btn_redirect' => 'Continue',
     'faq' => 'FAQ',
     'home' => 'Home',
+
+    'header' => [
+        'buttons' => [
+            'api' => 'API',
+            'resources' => 'Resources',
+            'information' => 'Information',
+            'how_use' => 'How Use',
+            'tracklink' => 'Track Link',
+            'contact' => 'Contact',
+        ]
+    ]
 ];

@@ -3,7 +3,7 @@
 
 return [
     'title_description' => 'Accorcia e condividi i tuoi link facilmente',
-    'meta_description' => 'Accorcia, gestisci e condividi i tuoi link con facilità utilizzando il nostro URL Shortener. Ottieni codici QR e molto altro.',
+    'meta_description' => 'Accorcia, gestisci e condividi i tuoi link con facilità utilizzando il nostro pagina. Ottieni codici QR e molto altro.',
     'description' => 'Accorcia i tuoi link con URL Shortener',
     'label_url' => 'Il tuo URL',
     'button_submit' => 'Accorcia ora il tuo collegamento e inizia a condividere!',
@@ -32,4 +32,15 @@ return [
     'btn_redirect' => 'Continua',
     'faq' => 'FAQ',
     'home' => 'Home',
+
+    'header' => [
+        'buttons' => [
+            'api' => 'API',
+            'resources' => 'Risorse',
+            'information' => 'Informazioni',
+            'how_use' => 'Come utilizzare',
+            'tracklink' => 'Traccia collegamento',
+            'contact' => 'Contatto',
+        ]
+    ]
 ];
