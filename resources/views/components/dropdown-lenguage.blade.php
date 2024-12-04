@@ -31,7 +31,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route(Route::currentRouteName(), ['locale' => 'en'] ) }}" class="flex items-center gap-2.5">
+                <a href="{{ route(Route::currentRouteName(), ['locale' => 'it'] ) }}" class="flex items-center gap-2.5">
                     <div>
                         <p class="text-sm text-dark dark:text-white">Italiano</p>
                     </div>
