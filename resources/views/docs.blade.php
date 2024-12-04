@@ -10,6 +10,7 @@
             <div class="grid grid-cols-1 gap-5 text-start" x-data="{ output: 1 }">
 
 
+                @include('docs.shorten')
                 @include('docs.login')
                 @include('docs.user')
                 @include('docs.getUserLinks')

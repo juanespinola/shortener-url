@@ -33,7 +33,19 @@ class LinkController extends Controller
             $send_email = $request->send_email;
 
             $qr_code_image = null;
+            // baraja una palabra extrayendo de estas letras
+            // extrae de esa palabra del 0 al 6
             $shortCode = substr(str_shuffle('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'), 0, 6);
+
+            if($request->is("api/*")) {
+                Link::create([
+                    'original_url' => $request->original_url,
+                    'short_code' => $shortCode,
+                    'expires_at' => isset($no_expire) ? null : now()->addHours(48),
+                    'user_id' => auth('sanctum')->check() ? auth('sanctum')->user()->id : null,
+                ]);
+                return response()->json(["Messages" => "Create Correct URL", "shortCode" => url('')."/$shortCode" ] );
+            }
 
             Link::create([
                 'original_url' => $request->original_url,
@@ -46,9 +58,7 @@ class LinkController extends Controller
                 $qr_code_image = QrCode::generateQrCode($request->original_url);
             }
 
-            if($request->wantsJson() || $request->is("api/*")) {
-                return response()->json(["Messages" => "Create Correct URL", "shortCode" => url('')."/$shortCode" ] );
-            }
+
 
             return view('responsePage',
                 compact('shortCode', 'qr_code', 'no_expire', 'send_email', 'qr_code_image')

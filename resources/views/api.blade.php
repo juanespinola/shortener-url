@@ -16,6 +16,14 @@
 
                 <a class="bg-white dark:bg-dark dark:border-gray/20 border-2 border-lightgray/10 rounded-lg p-5 space-y-2 w-full" href="{{ url('docs') }}">
                     <div class="flex justify-between gap-3">
+                        <p class="text-3xl font-semibold">Short you Link</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6m0 0H9m9 0v9"/></svg>
+                    </div>
+                    <p class="text-gray text-sm">Short you Link</p>
+                </a>
+
+                <a class="bg-white dark:bg-dark dark:border-gray/20 border-2 border-lightgray/10 rounded-lg p-5 space-y-2 w-full" href="{{ url('docs') }}">
+                    <div class="flex justify-between gap-3">
                         <p class="text-3xl font-semibold">TrackList</p>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6m0 0H9m9 0v9"/></svg>
                     </div>

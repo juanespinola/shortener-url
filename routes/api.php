@@ -7,23 +7,29 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 Route::get("/up", function () {
-    return "API ON";
+    return response()->json(["message" => "Welcome to API"]);
 });
 
 // No es necesario el uso de idiomas
-Route::get("/docs", function () {
-    return view('docs');
-})->name('docs');
 
-Route::post('/shorten', [LinkController::class, 'store']);
-Route::post('/trackLink', [LinkController::class, 'trackLink']);
+//Route::middleware('guest:sanctum')->group(function () {
 
-Route::post('login', [AuthenticatedSessionController::class, 'login']);
+    Route::get("/docs", function () {
+        return view('docs');
+    })->name('docs');
 
-Route::get('/user', function (Request $request) { return $request->user(); })->middleware('auth:sanctum');
+    Route::post('/shorten', [LinkController::class, 'store']);
+    Route::post('/trackLink', [LinkController::class, 'trackLink']);
+    Route::post('login', [AuthenticatedSessionController::class, 'login']);
+//});
 
-Route::get('/getUserLinks', [UserController::class, 'getUserLinks'])->middleware('auth:sanctum');
-Route::post('/getUserLinkTrackingByCode', [UserController::class, 'getUserLinkTrackingByCode'])->middleware('auth:sanctum');
-Route::post('/getUserLinkTracking', [UserController::class, 'getUserLinkTracking'])->middleware('auth:sanctum');
+Route::middleware('auth:sanctum')->group(callback: function () {
 
+    Route::get('/user', function (Request $request) { return $request->user(); });
+//    Route::post('/shorten', [LinkController::class, 'store']);
+    Route::get('/getUserLinks', [UserController::class, 'getUserLinks']);
+    Route::post('/getUserLinkTrackingByCode', [UserController::class, 'getUserLinkTrackingByCode']);
+    Route::post('/getUserLinkTracking', [UserController::class, 'getUserLinkTracking']);
+
+});
 
