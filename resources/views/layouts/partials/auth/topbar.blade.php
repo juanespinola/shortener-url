@@ -45,7 +45,7 @@
                 </svg>
             </button>
         </div>
-{{--        <x-toggle-theme/>--}}
+       <x-toggle-theme/>
         <x-dropdown-lenguage/>
         <div class="profile z-10" x-data="dropdown" @click.outside="open = false">
             <button type="button" class="flex items-center gap-2.5" @click="toggle()">

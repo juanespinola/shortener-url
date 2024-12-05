@@ -18,7 +18,7 @@
     <div x-show="output === '7'">
                         <pre><code class="language-js">{
     "Messages": "Create Correct URL",
-    "shortCode": "{{ url('api') }}/ABC123"
+    "shortCode": "{{ url('') }}/ABC123"
 }</code></pre>
     </div>
 </div>

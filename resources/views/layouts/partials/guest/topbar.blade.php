@@ -7,7 +7,7 @@
         @if(!Route::is('cut'))
             <x-dropdown-lenguage/>
         @endif
-{{--        <x-toggle-theme/>--}}
+       <x-toggle-theme/>
 
 
 
