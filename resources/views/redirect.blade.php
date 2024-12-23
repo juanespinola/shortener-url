@@ -70,7 +70,7 @@
         }
     </style>
     @if (env('APP_ENV') !== 'local')
-        <script src="https://alwingulla.com/88/tag.min.js" data-zone="116835" async data-cfasync="false"></script>
+        {{-- <script src="https://alwingulla.com/88/tag.min.js" data-zone="116835" async data-cfasync="false"></script> --}}
     @endif
 
 </head>
