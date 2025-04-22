@@ -91,7 +91,7 @@
                     </div>
                     <div>
                         <h2>{{ __('messages.redirecting') }}</h2>
-                        <p>{{ __('messages.text_redirecting') }}<span id="countdown">7</span>
+                        <p>{{ __('messages.text_redirecting') }}<span id="countdown">10</span>
                             {{ __('messages.text_redirecting_seg') }}.</p>
                         <button id="redirectBtn" disabled>{{ __('messages.btn_redirect') }}</button>
 
@@ -117,7 +117,7 @@
     <script>
         let countdownElement = document.getElementById('countdown');
         let redirectButton = document.getElementById('redirectBtn');
-        let secondsLeft = 7;
+        let secondsLeft = 10;
         let targetUrl = "{{ $originalUrl }}"; // La URL a la que se redirigirá
 
         // Temporizador
@@ -130,15 +130,15 @@
                 redirectButton.textContent = "Redirigir";
                 redirectButton.disabled = false;
                 redirectButton.onclick = function() {
-                    // window.location.href = targetUrl;
+                    window.location.href = targetUrl;
                 };
             }
         }, 1000);
 
         // Redirigir automáticamente después de 5 segundos
         setTimeout(() => {
-        // window.location.href = targetUrl;
-        }, 7000);
+        window.location.href = targetUrl;
+        }, 10000);
     </script>
 
 
