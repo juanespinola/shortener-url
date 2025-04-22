@@ -2,6 +2,7 @@
 <html lang="{{ app()->getLocale() }}">
 
 <head>
+    
     <style>
         html,
         body {
@@ -33,7 +34,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        #container_ads {
+        #container {
             display: flex;
         }
 
@@ -62,7 +63,7 @@
             cursor: not-allowed;
         }
 
-        #ads-container {
+        #first-container {
             margin-top: 20px;
             padding: 10px;
             background-color: #e9ecef;
@@ -73,6 +74,8 @@
         {{-- <script src="https://alwingulla.com/88/tag.min.js" data-zone="116835" async data-cfasync="false"></script> --}}
     @endif
 
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4892518104055099"
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -80,32 +83,11 @@
     <main>
         <div class="container col-xl-10 col-xxl-8 px-4 py-4">
             <div class="row align-items-center g-lg-5 py-5">
-                <div>
-                    <script type="text/javascript">
-                        atOptions = {
-                            'key': 'cf422841cc28852722bc078c74af3ce3',
-                            'format': 'iframe',
-                            'height': 90,
-                            'width': 728,
-                            'params': {}
-                        };
-                    </script>
-                    <script type="text/javascript" src="//www.highperformanceformat.com/cf422841cc28852722bc078c74af3ce3/invoke.js">
-                    </script>
+               
                 </div>
-                <div id="container_ads">
+                <div id="container">
                     <div>
-                        <script type="text/javascript">
-                            atOptions = {
-                                'key': '6617aa5df045852676fe879746e8a061',
-                                'format': 'iframe',
-                                'height': 300,
-                                'width': 160,
-                                'params': {}
-                            };
-                        </script>
-                        <script type="text/javascript" src="//www.highperformanceformat.com/6617aa5df045852676fe879746e8a061/invoke.js">
-                        </script>
+                       
                     </div>
                     <div>
                         <h2>{{ __('messages.redirecting') }}</h2>
@@ -114,33 +96,13 @@
                         <button id="redirectBtn" disabled>{{ __('messages.btn_redirect') }}</button>
 
                         <!-- Espacio para el anuncio -->
-                        <div id="ads-container">
+                        <div id="first-container">
                             {{-- <p>Publicidad</p> --}}
-                            <script type="text/javascript">
-                                atOptions = {
-                                    'key': '40b5feb67a54e54675c5dfc464c8aed3',
-                                    'format': 'iframe',
-                                    'height': 50,
-                                    'width': 320,
-                                    'params': {}
-                                };
-                            </script>
-                            <script type="text/javascript" src="//www.highperformanceformat.com/40b5feb67a54e54675c5dfc464c8aed3/invoke.js">
-                            </script>
+                          
                         </div>
                     </div>
                     <div>
-                        <script type="text/javascript">
-                            atOptions = {
-                                'key': '6617aa5df045852676fe879746e8a061',
-                                'format': 'iframe',
-                                'height': 300,
-                                'width': 160,
-                                'params': {}
-                            };
-                        </script>
-                        <script type="text/javascript" src="//www.highperformanceformat.com/6617aa5df045852676fe879746e8a061/invoke.js">
-                        </script>
+                       
                     </div>
                 </div>
                 <div>
@@ -149,9 +111,7 @@
             </div>
 
             
-            <script async="async" data-cfasync="false" src="//pl24051434.profitablecpmrate.com/1f82266a332d64673f597077664f4b5a/invoke.js"></script>
-            <div id="container-1f82266a332d64673f597077664f4b5a"></div>
-
+            
         </div>
     </main>
     <script>
@@ -170,14 +130,14 @@
                 redirectButton.textContent = "Redirigir";
                 redirectButton.disabled = false;
                 redirectButton.onclick = function() {
-                    window.location.href = targetUrl;
+                    // window.location.href = targetUrl;
                 };
             }
         }, 1000);
 
         // Redirigir automáticamente después de 5 segundos
         setTimeout(() => {
-        window.location.href = targetUrl;
+        // window.location.href = targetUrl;
         }, 7000);
     </script>
 

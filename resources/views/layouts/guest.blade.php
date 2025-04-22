@@ -14,7 +14,7 @@
     <!-- End Footer -->
 </div>
 <!-- All javascirpt -->
-@include('layouts.partials.auth.scripts')
+{{-- @include('layouts.partials.auth.scripts') --}}
 <!-- End Layout -->
 </body>
 </html>
