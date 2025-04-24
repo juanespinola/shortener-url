@@ -128,7 +128,7 @@
         }, 1000);
 
         setTimeout(() => {
-            // window.location.href = targetUrl;
+            window.location.href = targetUrl;
         }, 10000);
     </script>
 
