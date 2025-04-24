@@ -2,40 +2,39 @@
 <html lang="{{ app()->getLocale() }}">
 
 <head>
-
     <style>
         html,
         body {
             height: 100%;
-            display: flex;
-            flex-direction: column;
+            margin: 0;
             font-family: Arial, sans-serif;
-            text-align: center;
-            /*padding-top: 100px;*/
             background-color: #f9f9f9;
             color: #333;
         }
 
-        main {
+        #fullscreen-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #banner-container {
+            margin-bottom: 30px;
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 90vh;
-            /* 100% del viewport height */
+            width: 100%;
         }
 
         #container {
             width: 80%;
             max-width: 500px;
-            margin: 0 auto;
             background-color: #fff;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        #container {
-            display: flex;
+            text-align: center;
         }
 
         h2 {
@@ -70,9 +69,6 @@
             border-radius: 5px;
         }
     </style>
-    @if (env('APP_ENV') !== 'local')
-        {{-- <script src="https://alwingulla.com/88/tag.min.js" data-zone="116835" async data-cfasync="false"></script> --}}
-    @endif
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4892518104055099"
         crossorigin="anonymous"></script>
@@ -80,47 +76,45 @@
 
 <body>
 
-    <main>
-        <div class="container col-xl-10 col-xxl-8 px-4 py-4">
-            <div class="row align-items-center g-lg-5 py-5">
+    <div id="fullscreen-container">
 
+        <!-- Banner de anuncio centrado -->
+       
+
+        <!-- Contenido centrado -->
+        <div id="container">
+
+            <div id="first-container">
+                <!-- banner_1 -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4892518104055099"
+                    data-ad-slot="4262079253" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
-            <div id="container">
-                <div>
+            
+            <h2>{{ __('messages.redirecting') }}</h2>
+            <p>{{ __('messages.text_redirecting') }}<span id="countdown">10</span>
+                {{ __('messages.text_redirecting_seg') }}.</p>
+            <button id="redirectBtn" disabled>{{ __('messages.btn_redirect') }}</button>
 
-                </div>
-                <div>
-                    <h2>{{ __('messages.redirecting') }}</h2>
-                    <p>{{ __('messages.text_redirecting') }}<span id="countdown">10</span>
-                        {{ __('messages.text_redirecting_seg') }}.</p>
-                    <button id="redirectBtn" disabled>{{ __('messages.btn_redirect') }}</button>
-
-                    <!-- Espacio para el anuncio -->
-                    <div id="first-container">
-                        {{-- <p>Publicidad</p> --}}
-
-                    </div>
-                </div>
-                <div>
-
-                </div>
-            </div>
-            <div>
-
+            <div id="first-container">
+                <!-- banner_2 -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4892518104055099"
+                    data-ad-slot="3475611191" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
         </div>
+    </div>
 
-
-
-        </div>
-    </main>
     <script>
         let countdownElement = document.getElementById('countdown');
         let redirectButton = document.getElementById('redirectBtn');
         let secondsLeft = 10;
-        let targetUrl = "{{ $originalUrl }}"; // La URL a la que se redirigirá
+        let targetUrl = "{{ $originalUrl }}";
 
-        // Temporizador
         let countdownInterval = setInterval(() => {
             secondsLeft--;
             countdownElement.textContent = secondsLeft;
@@ -129,28 +123,15 @@
                 clearInterval(countdownInterval);
                 redirectButton.textContent = "Redirigir";
                 redirectButton.disabled = false;
-                redirectButton.onclick = function() {
-                    window.location.href = targetUrl;
-                };
+                redirectButton.onclick = () => window.location.href = targetUrl;
             }
         }, 1000);
 
-        // Redirigir automáticamente después de 5 segundos
         setTimeout(() => {
-            window.location.href = targetUrl;
+            // window.location.href = targetUrl;
         }, 10000);
     </script>
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4892518104055099"
-        crossorigin="anonymous"></script>
-    <!-- banner_1 -->
-    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4892518104055099" data-ad-slot="4262079253"
-        data-ad-format="auto" data-full-width-responsive="true"></ins>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-
 </body>
-
 
 </html>
