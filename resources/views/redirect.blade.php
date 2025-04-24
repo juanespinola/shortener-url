@@ -2,7 +2,7 @@
 <html lang="{{ app()->getLocale() }}">
 
 <head>
-    
+
     <style>
         html,
         body {
@@ -75,7 +75,7 @@
     @endif
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4892518104055099"
-    crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -83,35 +83,35 @@
     <main>
         <div class="container col-xl-10 col-xxl-8 px-4 py-4">
             <div class="row align-items-center g-lg-5 py-5">
-               
-                </div>
-                <div id="container">
-                    <div>
-                       
-                    </div>
-                    <div>
-                        <h2>{{ __('messages.redirecting') }}</h2>
-                        <p>{{ __('messages.text_redirecting') }}<span id="countdown">10</span>
-                            {{ __('messages.text_redirecting_seg') }}.</p>
-                        <button id="redirectBtn" disabled>{{ __('messages.btn_redirect') }}</button>
 
-                        <!-- Espacio para el anuncio -->
-                        <div id="first-container">
-                            {{-- <p>Publicidad</p> --}}
-                          
-                        </div>
-                    </div>
-                    <div>
-                       
+            </div>
+            <div id="container">
+                <div>
+
+                </div>
+                <div>
+                    <h2>{{ __('messages.redirecting') }}</h2>
+                    <p>{{ __('messages.text_redirecting') }}<span id="countdown">10</span>
+                        {{ __('messages.text_redirecting_seg') }}.</p>
+                    <button id="redirectBtn" disabled>{{ __('messages.btn_redirect') }}</button>
+
+                    <!-- Espacio para el anuncio -->
+                    <div id="first-container">
+                        {{-- <p>Publicidad</p> --}}
+
                     </div>
                 </div>
                 <div>
-                  
+
                 </div>
             </div>
+            <div>
 
-            
-            
+            </div>
+        </div>
+
+
+
         </div>
     </main>
     <script>
@@ -137,10 +137,18 @@
 
         // Redirigir automáticamente después de 5 segundos
         setTimeout(() => {
-        window.location.href = targetUrl;
+            window.location.href = targetUrl;
         }, 10000);
     </script>
 
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4892518104055099"
+        crossorigin="anonymous"></script>
+    <!-- banner_1 -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4892518104055099" data-ad-slot="4262079253"
+        data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 
 </body>
 
