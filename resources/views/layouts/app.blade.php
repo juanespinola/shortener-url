@@ -29,12 +29,12 @@
 
             <!-- Start Content -->
             <div class="h-[calc(100vh-60px)] relative overflow-y-auto overflow-x-hidden p-5 sm:p-7 space-y-5">
-
+                <main>
                 <!-- Main Contenet -->
                 @yield('content')
-
-                <!-- start loader -->
-
+                
+                </main>
+                
                 <!-- Start Footer -->
                 @include('layouts.partials.auth.footer')
                 <!-- End Footer -->
