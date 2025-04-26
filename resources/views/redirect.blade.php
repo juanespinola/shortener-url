@@ -14,13 +14,16 @@
     <link rel="stylesheet" href="{{ asset('assets/css/prism.css') }}">
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3MGXFZTH6"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D97ZKCW55T"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
 
-    gtag('config', 'G-L3MGXFZTH6');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-D97ZKCW55T');
     </script>
 
 
