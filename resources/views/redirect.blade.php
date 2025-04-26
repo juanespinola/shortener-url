@@ -3,14 +3,14 @@
 
 <head>
     <style>
-        html,
+        /* html,
         body {
             height: 100%;
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #f9f9f9;
             color: #333;
-        }
+        } */
 
         #fullscreen-container {
             display: flex;
@@ -94,7 +94,7 @@
             </div>
             
             <h2>{{ __('messages.redirecting') }}</h2>
-            <p>{{ __('messages.text_redirecting') }}<span id="countdown">10</span>
+            <p>{{ __('messages.text_redirecting') }} <span id="countdown">10</span>
                 {{ __('messages.text_redirecting_seg') }}.</p>
             <button id="redirectBtn" disabled>{{ __('messages.btn_redirect') }}</button>
 
@@ -127,9 +127,9 @@
             }
         }, 1000);
 
-        setTimeout(() => {
-            window.location.href = targetUrl;
-        }, 10000);
+        // setTimeout(() => {
+        // window.location.href = targetUrl;
+        // }, 10000);
     </script>
 
 </body>
