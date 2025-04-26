@@ -26,6 +26,20 @@
         gtag('config', 'G-D97ZKCW55T');
     </script>
 
+    <script>
+        function gtag_report_conversion(url) {
+            var callback = function() {
+                if (typeof(url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-475120202/SiSSCPu40soZEMqEx-IB',
+                'event_callback': callback
+            });
+            return false;
+        }
+    </script>
 
     <!-- Scripts -->
     
