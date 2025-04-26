@@ -3,6 +3,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="{{ __('messages.title_description') }}">
+    <meta name="keywords" content="acortar link, acortar url, acortador de enlaces, acortar enlace, acortar enlaces gratis, encurtador de link, acortador url google, como acortar un link, link shortener, url short">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <!-- Google tag (gtag.js) -->
