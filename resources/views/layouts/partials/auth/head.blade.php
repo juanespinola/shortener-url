@@ -12,9 +12,10 @@
         _iub.csConfiguration = {"siteId":4009176,"cookiePolicyId":19224601,"lang":"en","storage":{"useSiteId":true}};
         </script>
         <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/4009176.js"></script>
+        <script type="text/javascript" src="//cdn.iubenda.com/cs/tcf/stub-v2.js"></script>
+        <script type="text/javascript" src="//cdn.iubenda.com/cs/tcf/safe-tcf-v2.js"></script>
         <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
         <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
-
         
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-D97ZKCW55T"></script>
