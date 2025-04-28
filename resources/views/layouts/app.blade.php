@@ -7,6 +7,11 @@
 <body x-data="main" class="font-inter text-base antialiased font-medium relative vertical"
       :class="[ $store.app.sidebar ? 'toggle-sidebar' : '', $store.app.fullscreen ? 'full' : '',$store.app.mode]">
 
+      <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5LSNLDJ7"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
 <!-- Start Layout -->
 <div class="bg-white dark:bg-dark text-dark dark:text-white">
 
