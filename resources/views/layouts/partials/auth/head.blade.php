@@ -6,6 +6,10 @@
     <meta name="keywords" content="acortar link, acortar url, acortador de enlaces, acortar enlace, acortar enlaces gratis, encurtador de link, acortador url google, como acortar un link, link shortener, url short">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
+    <!-- Start cookieyes banner -->
+	<script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/ee7c93d91b0d09cfdf4f0c36/script.js"></script>
+	<!-- End cookieyes banner -->
+    
      <!-- Google Tag Manager -->
      <script>
         (function(w, d, s, l, i) {
