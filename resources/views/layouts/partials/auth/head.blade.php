@@ -13,7 +13,7 @@
     <!-- End cookieyes banner -->
 
     <!-- Google tag (gtag.js) -->
-    {{-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-D97ZKCW55T"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D97ZKCW55T"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -23,7 +23,7 @@
         gtag('js', new Date());
 
         gtag('config', 'G-D97ZKCW55T');
-    </script> --}}
+    </script>
     <!-- Google Tag Manager -->
     <script>
         (function(w, d, s, l, i) {
@@ -44,7 +44,7 @@
     <!-- End Google Tag Manager -->
     <!-- Event snippet for Vista de una página conversion page
     In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-    {{-- <script>
+    <script>
         function gtag_report_conversion(url) {
             var callback = function() {
                 if (typeof(url) != 'undefined') {
@@ -57,7 +57,7 @@
             });
             return false;
         }
-    </script> --}}
+    </script>
 
 
     <!-- Site Tiltle -->
