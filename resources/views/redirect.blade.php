@@ -33,8 +33,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/prism.css') }}">
 
     <!-- Start cookieyes banner -->
-    <script id="cookieyes" type="text/javascript"
-        src="https://cdn-cookieyes.com/client_data/ee7c93d91b0d09cfdf4f0c36/script.js"></script>
+    {{-- <script id="cookieyes" type="text/javascript"
+        src="https://cdn-cookieyes.com/client_data/ee7c93d91b0d09cfdf4f0c36/script.js"></script> --}}
     <!-- End cookieyes banner -->
 
     <!-- Google tag (gtag.js) -->
