@@ -7,38 +7,14 @@
     <title>Redireccionando...</title>
     <meta name="description" content="{{ __('messages.title_description') }}">
 
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-5LSNLDJ7');
-    </script>
-    <!-- End Google Tag Manager -->
-
     @yield('css')
 
     <!-- Style Css -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/prism.css') }}">
 
-    <!-- Start cookieyes banner -->
-    {{-- <script id="cookieyes" type="text/javascript"
-        src="https://cdn-cookieyes.com/client_data/ee7c93d91b0d09cfdf4f0c36/script.js"></script> --}}
-    <!-- End cookieyes banner -->
-
     <!-- Google tag (gtag.js) -->
-    {{-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-D97ZKCW55T"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D97ZKCW55T"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -48,9 +24,9 @@
         gtag('js', new Date());
 
         gtag('config', 'G-D97ZKCW55T');
-    </script> --}}
+    </script>
 
-    {{-- <script>
+    <script>
         function gtag_report_conversion(url) {
             var callback = function() {
                 if (typeof(url) != 'undefined') {
@@ -63,7 +39,7 @@
             });
             return false;
         }
-    </script> --}}
+    </script>
 
     <!-- Scripts -->
 
@@ -74,10 +50,6 @@
 </head>
 
 <body class="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-4">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5LSNLDJ7" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
 
     <!-- Banner superior -->
     <div class="w-full max-w-2xl mb-6">
